@@ -1,7 +1,12 @@
+using EncuestaRazorPages.Servicios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<ServicioEncuestas>(); // el método Add.Singleton indica que el servicio debe estar disponible
+                                                    // en todo momento durante la ejecución de la app y solo habrá una instancia
+                                                    // de ese servicio durante su ejecución.
 
 var app = builder.Build();
 
