@@ -13,6 +13,10 @@ namespace EncuestaRazorPages.Pages
         }
 
         public void OnGet()
+        /* Page handler, método. 
+         * Es el punto de entrada para inicializar datos cuando la página 
+         * se carga por primera vez mediante una solicitud GET.
+         * Este método solo ejecuta lógica interna y no retorna ningun valor */
         {
         }
     }

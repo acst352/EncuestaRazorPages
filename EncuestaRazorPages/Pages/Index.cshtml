@@ -1,10 +1,58 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+	ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<p>
+	@DateTime.Now
+</p>
+<p>
+	Hace tres días fue @(DateTime.Now - TimeSpan.FromDays(3))
+</p>
+
+@("<h2>Hola Mundo desde Peru</h2>") @*renderizar html sin codificar*@
+@Html.Raw("<h2>Hola Mundo desde Peru</h2>") @*peligroso*@
+@{
+	var mensaje = "Hola mundillo";
+}
+<p>
+	@mensaje
+</p>
+@{
+	var mensaje2 = "Hola mundo mayus";
+	string mostrarMensajeMayus(string mensaje)
+	{
+		return mensaje.ToUpper();
+	}
+}
+<p>
+	@mostrarMensajeMayus(mensaje2)
+</p>
+@{
+	var listaMaterias = new List<string>() { "Informática", "Música", "Matemáticas", "Educación Artística" };
+	foreach (var materia in listaMaterias)
+	{
+		<text>Materia: @materia</text><br />
+		@*@:Materia: @materia <br />*@;
+	}
+	if (listaMaterias.Count > 0)
+	{
+		<strong>Tienes muchas materias </strong>
+	}
+	else
+	{
+		<strong>Necesitas agregar más materias</strong>
+	}
+
+	var asignatura = "Música";
+	var mensajeAsignatura = asignatura switch
+	{
+		"Música" => "Buena eleccion",
+		"Computacion" => "otra buena opcion",
+		"Fisica" => "una opcion diferente",
+		_ => "Selecciona una opcion"
+	};
+}
+<h5>@mensajeAsignatura</h5>
+
