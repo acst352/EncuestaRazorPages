@@ -22,6 +22,9 @@ namespace EncuestaRazorPages.Pages
         [BindProperty]
         public int PersonaSeleccionada { get; set; }
         public List<Persona> Personas { get; set; }
+        public int MyProperty { get; set; }
+
+        public  EstadoDocumento Estado { get; set; }
         public void OnGet()
         {
             Personas = new List<Persona>
