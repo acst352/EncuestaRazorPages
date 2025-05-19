@@ -19,8 +19,19 @@ namespace EncuestaRazorPages.Pages
         }).ToList();
 
         public int NumeroSeleccionado { get; set; } = 7;
+        [BindProperty]
+        public int PersonaSeleccionada { get; set; }
+        public List<Persona> Personas { get; set; }
         public void OnGet()
         {
+            Personas = new List<Persona>
+            {
+                new Persona {Id =1, Nombre="George"},
+                new Persona {Id =2, Nombre="John"},
+                new Persona {Id =3, Nombre="Paul"},
+                new Persona {Id =4, Nombre="Ringo"},
+            };
         }
     }
+
 }
