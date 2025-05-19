@@ -25,6 +25,9 @@ namespace EncuestaRazorPages.Pages
         public int MyProperty { get; set; }
 
         public  EstadoDocumento Estado { get; set; }
+        [MinLength(5)]
+        [MaxLength(500)]
+        public string Observaciones { get; set; }
         public void OnGet()
         {
             Personas = new List<Persona>
