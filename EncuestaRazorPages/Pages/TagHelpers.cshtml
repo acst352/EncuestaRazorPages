@@ -6,6 +6,10 @@
 <a asp-page="Index">Encuesta</a>
 <form asp-page="Index">
 	<img src="img/encuesta.png" asp-append-version="true" style="max-width:50%" />
-	<input asp-for="CorreoElectronico" />
+
+	<div class="form-group">
+		<label asp-for="CorreoElectronico"></label>
+		<input asp-for="CorreoElectronico" class="form-control" />
+	</div>
 
 </form>

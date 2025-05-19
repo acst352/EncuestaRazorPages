@@ -8,6 +8,7 @@ namespace EncuestaRazorPages.Pages
     {
         [DataType(DataType.EmailAddress)]
         [Required]
+        [Display(Name = "Correo Electronico")]
         public string CorreoElectronico { get; set; }
         public void OnGet()
         {
