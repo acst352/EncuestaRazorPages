@@ -5,18 +5,19 @@
 }
 
 <form asp-page="Encuesta">
+	@*Página a la que envía la información*@
 	<div class="text-center">
 		<img src="~/img/encuesta.png" asp-append-version="true" style="width: 25%" />
 	</div>
 	<div class="form-group">
-		<label asp-for="Encuesta.Nombre"></label>
+		<label asp-for="Encuesta.Nombre"></label> @*Elemento para la Propiedad Encuesta.Nombre*@
 		<input class="form-control" asp-for="Encuesta.Nombre" />
 	</div>
 	<div class="form-group mt-3">
 		¿Te gustaría realizar guardias en la oficina?<br />
-		<div class="form-check">
+		<div class="form-check mt-2">
 			<input class="form-check-input" type="radio" id="respuestaSi" value="true"
-				   asp-for="Encuesta.Guardias">
+				   asp-for="Encuesta.Guardias"> @*Mapeo *@
 			<label class="form-check-label" for="respuestaSi">
 				Si
 			</label>
@@ -26,12 +27,12 @@
 		<label class="form-check-label" for="respuestaNo">
 			No
 		</label>
-		<div class="form-group">
-			<label></label>
-			<textarea class="form-control"></textarea>
-		</div>
-		<div class="text-center mt-3">
-			<input type="submit" value="Enviar" class="btn btn-primary" />
-		</div>
+	</div>
+	<div class="form-group mt-3">
+		<label asp-for="Encuesta.Comentarios"></label>
+		<textarea class="form-control" asp-for="Encuesta.Comentarios"></textarea>
+	</div>
+	<div class="text-center mt-3">
+		<input type="submit" value="Enviar" class="btn btn-primary" />
 	</div>
 </form>
