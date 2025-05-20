@@ -8,7 +8,7 @@ namespace EncuestaRazorPages.Servicios
 
         internal void Agregar(Encuesta encuesta)
         {
-            throw new NotImplementedException();
+            Encuestas.Add(encuesta);
         }
     }
 }
